@@ -1,0 +1,303 @@
+input[type=text] {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+}
+input[type=number] {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.charsheet {
+  padding: 10px;
+}
+
+.sheet-character {
+  display: grid;
+  grid-template-columns: 720px;
+  gap: 8px;
+  grid-template-areas:
+          "header"
+          "values"
+          "stats"
+          "skills"
+          "faculties"
+          "healths";
+
+  .sheet-header {
+    grid-area: header;
+  }
+  .sheet-values {
+    grid-area: values;
+  }
+  .sheet-stats {
+    grid-area: stats;
+  }
+  .sheet-skills {
+    grid-area: skills;
+  }
+  .sheet-faculty {
+    grid-area: faculty;
+  }
+  .sheet-health {
+    grid-area: health;
+  }
+
+}
+
+.sheet-header {
+
+  padding: 8px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-areas:
+          "character-title empty"
+          "character-name age"
+          "job rank"
+          "god culture"
+          "player-name xp";
+  grid-template-columns: 350px 350px;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+
+  .sheet-label {
+    font-size: 18px;
+    display: inline-block;
+    min-width: 60px;
+  }
+
+  .sheet-character-title {
+    grid-area: character-title;
+  }
+
+  .sheet-character-name {
+    grid-area: character-name;
+  }
+
+  .sheet-job {
+    grid-area: job;
+  }
+
+  .sheet-god {
+    grid-area: god;
+  }
+
+  .sheet-player-name {
+    grid-area: player-name;
+  }
+
+  .sheet-age {
+    grid-area: age;
+  }
+
+  .sheet-rank {
+    grid-area: rank;
+  }
+
+  .sheet-culture {
+    grid-area: culture;
+  }
+
+  .sheet-xp {
+    grid-area: xp;
+  }
+
+  .sheet-character-name,
+  .sheet-job,
+  .sheet-god,
+  .sheet-player-name,
+  .sheet-age,
+  .sheet-rank,
+  .sheet-culture,
+  .sheet-xp {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+    input {
+      width: 180px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+
+    select {
+      width: 150px;
+    }
+
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.sheet-values {
+
+  padding: 8px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-areas: "value-title empty empty" "value-virtue value-fides value-pietas" "virtue-comportement fides-comportement pietas-comportement" ;
+  grid-template-columns: 238px 238px 238px;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+
+  .sheet-value-title {
+    grid-area: value-title;
+  }
+
+  .sheet-value-virtue {
+    grid-area: value-virtue;
+  }
+
+  .sheet-value-fides {
+    grid-area: value-fides;
+  }
+
+  .sheet-value-pietas {
+    grid-area: value-pietas;
+  }
+
+  .sheet-virtue-comportement {
+    grid-area: virtue-comportement;
+  }
+
+  .sheet-fides-comportement {
+    grid-area: fides-comportement;
+  }
+
+  .sheet-pietas-comportement {
+    grid-area: pietas-comportement;
+  }
+
+}
+
+.sheet-characteristics {
+
+  padding: 8px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-areas: "title title title" "const charac per" "dex rel spirit" ;
+  grid-template-columns: 238px 238px 238px;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+
+  .sheet-characteristics-title {
+    grid-area: title;
+  }
+
+  .sheet-characteristics-const {
+    grid-area: const;
+  }
+
+  .sheet-characteristics-char {
+    grid-area: charac;
+  }
+
+  .sheet-characteristics-per {
+    grid-area: per;
+  }
+
+  .sheet-characteristics-dex {
+    grid-area: dex;
+  }
+
+  .sheet-characteristics-rel {
+    grid-area: rel;
+  }
+
+  .sheet-characteristics-spirit {
+    grid-area: spirit;
+  }
+
+}
+
+.sheet-skills {
+  padding: 4px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-areas: "title title title" "virtue fides pietas" ;
+  grid-template-columns: 238px 238px 238px;
+  grid-row-gap: 4px;
+  grid-column-gap: 0px;
+
+  .sheet-skill-title {
+    grid-area: title;
+  }
+
+  .sheet-virtue-skills {
+    grid-area: virtue;
+  }
+
+  .sheet-fides-skills {
+    grid-area: fides;
+  }
+
+  .sheet-pietas-skills {
+    grid-area: pietas;
+  }
+
+  .sheet-skill {
+    display: grid;
+    grid-template-columns: 80px 152px;
+    align-items: center;
+    justify-items: left;
+
+    .sheet-skill-levels {
+      font-size: 8px;
+    }
+
+    .sheet-skill-label {
+      font-size: 11px;
+    }
+
+  }
+}
+
+.sheet-faculties,
+.sheet-healths {
+  padding: 8px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 238px 238px 238px;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+
+}
+
+.sheet-value-level,
+.sheet-characteristic-level,
+.sheet-skill-level,
+.sheet-faculty-level {
+  display: none;
+}
+
+.sheet-notes {
+  textarea {
+    width: 100%;
+    min-height: 500px;
+
+  }
+}
+
+/*Configure the tab buttons*/
+.sheet-character,
+.sheet-equipment,
+.sheet-notes {
+  display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="equipment"] ~ div.sheet-equipment,
+.sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
+  display: grid;
+}

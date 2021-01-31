@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="fr">
+<head>
+    <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="https://app.roll20dev.net/assets/base.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="charsheet">
+    <!-- BEGIN copy to roll20 -->
+
+    <div>
+        <button type="action" name="act_character" >Personnage</button>
+        <button type="action" name="act_equipment" >Religion/Équipement</button>
+        <button type="action" name="act_notes" >Notes</button>
+    </div>
+    <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+
+    <div class="sheet-character">
+        <div class="sheet-header">
+            <div class="sheet-character-title"><h3>IDENTITÉ</h3></div>
+            <div class="sheet-character-name">
+                <span class="sheet-label">Nom</span>
+                <span class="sheet-value"><input type="text" name="attr_character_name"/></span>
+            </div>
+
+            <div class="sheet-job">
+                <span class="sheet-label">Fonction</span>
+                <span class="sheet-value">
+                        <select name="attr_job_name">
+                            <option></option>
+                            <option value="Bellator">Bellator</option>
+                            <option value="Emissarius">Emissarius</option>
+                            <option value="Medicus">Medicus</option>
+                            <option value="Orator">Orator</option>
+                            <option value="Vatès">Vatès</option>
+                        </select>
+                    </span>
+            </div>
+            <div class="sheet-god">
+                <span class="sheet-label">Dieu tutélaire</span>
+                <span class="sheet-value"><input type="text" name="attr_god_name"/></span>
+            </div>
+            <div class="sheet-player-name">
+                <span class="sheet-label">Joueur</span>
+                <span class="sheet-value"><input type="text" name="attr_player_name"/></span>
+            </div>
+
+            <div class="sheet-age">
+                <span class="sheet-label">Age</span>
+                <span class="sheet-value"><input type="text" name="attr_age" inputmode="number"/></span>
+            </div>
+            <div class="sheet-rank">
+                <span class="sheet-label">Rang</span>
+                <span class="sheet-value"><input type="text" name="attr_rank" /></span>
+            </div>
+            <div class="sheet-culture">
+                <span class="sheet-label">Culture</span>
+                <span class="sheet-value">
+                        <select name="attr_culture_name">
+                            <option></option>
+                            <option value="Romain">Romain</option>
+                            <option value="Égyptien">Égyptien</option>
+                            <option value="Gaulois">Gaulois</option>
+                            <option value="Grec">Grec</option>
+                        </select>
+                    </span>
+            </div>
+            <div class="sheet-xp">
+                <span class="sheet-label">Experience</span>
+                <span class="sheet-value"><input type="text" name="attr_xp" /></span>
+            </div>
+        </div> <!-- class="sheet-header" -->
+
+        <div class="sheet-values">
+            <div class="sheet-value-title"></div>
+            <div class="sheet-value-title"><h3>VALUES</h3></div>
+            <div class="sheet-value-title"></div>
+
+            <div class="sheet-value-virtue">
+                <div class="sheet-value-label"><h3>Virtue</h3></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_virtue_1" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_2" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_3" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_4" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_5" value="1"/>
+                </div>
+                <div class="sheet-value-level">
+                    <input type="number" name="attr_value_virtue"
+                           value="(@{attr_value_virtue_1}+@{attr_value_virtue_2}+@{attr_value_virtue_3}+@{attr_value_virtue_4}+@{attr_value_virtue_5})"
+                           disabled/>
+                </div>
+            </div>
+            <div class="sheet-value-fides">
+                <div class="sheet-value-label"><h3>Fides</h3></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_fides_1" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_2" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_3" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_4" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_5" value="1"/>
+                </div>
+                <div class="sheet-value-level">
+                    <input type="number" name="attr_value_fides"
+                           value="(@{attr_value_fides_1}+@{attr_value_fides_2}+@{attr_value_fides_3}+@{attr_value_fides_4}+@{attr_value_fides_5})"
+                           disabled/>
+                </div>
+            </div>
+            <div class="sheet-value-pietas">
+                <div class="sheet-value-label"><h3>Pietas</h3></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_pietas_1" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_2" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_3" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_4" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_5" value="1"/>
+                </div>
+                <div class="sheet-value-level">
+                    <input type="number" name="attr_value_pietas"
+                           value="(@{attr_value_pietas_1}+@{attr_value_pietas_2}+@{attr_value_pietas_3}+@{attr_value_pietas_4}+@{attr_value_pietas_5})"
+                           disabled/>
+                </div>
+            </div>
+            <div class="sheet-virtue-comportement">
+                <div class="sheet-value-label"><h4>Comportement</h4></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_virtue_comportement_1" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_2" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_3" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_4" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_value_virtue_comportement_6" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_7" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_8" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_9" value="1"/>
+                    <input type="checkbox" name="attr_value_virtue_comportement_10" value="1"/>
+                </div>
+            </div>
+            <div class="sheet-fides-comportement">
+                <div class="sheet-value-label"><h4>Comportement</h4></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_fides_comportement_1" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_2" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_3" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_4" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_value_fides_comportement_6" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_7" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_8" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_9" value="1"/>
+                    <input type="checkbox" name="attr_value_fides_comportement_10" value="1"/>
+                </div>
+            </div>
+            <div class="sheet-pietas-comportement">
+                <div class="sheet-value-label"><h4>Comportement</h4></div>
+                <div class="sheet-value-levels">
+                    <input type="checkbox" name="attr_value_pietas_comportement_1" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_2" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_3" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_4" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_value_pietas_comportement_6" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_7" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_8" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_9" value="1"/>
+                    <input type="checkbox" name="attr_value_pietas_comportement_10" value="1"/>
+                </div>
+            </div>
+        </div><!-- class="sheet-value" -->
+
+        <div class="sheet-characteristics">
+
+            <div class="sheet-characteristics-title"></div>
+            <div class="sheet-characteristics-title"><h3>CARACTERISTIQUES</h3></div>
+            <div class="sheet-characteristics-title"></div>
+
+            <div class="sheet-characteristic-const">
+                <div class="sheet-characteristic-label"><h3>Constitution</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_const_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_const_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_const_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_const"
+                           value="(@{attr_sheet_characteristic_const_1}+@{attr_sheet_characteristic_const_2}+@{attr_sheet_characteristic_const_3}+@{attr_sheet_characteristic_const_4}+@{attr_sheet_characteristic_const_5+@{attr_sheet_characteristic_const_6+@{attr_sheet_characteristic_const_7+@{attr_sheet_characteristic_const_8+@{attr_sheet_characteristic_const_9+@{attr_sheet_characteristic_const_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-characteristic-char">
+                <div class="sheet-characteristic-label"><h3>Charisme</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_char_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_char_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_char_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_char"
+                           value="(@{attr_sheet_characteristic_char_1}+@{attr_sheet_characteristic_char_2}+@{attr_sheet_characteristic_char_3}+@{attr_sheet_characteristic_char_4}+@{attr_sheet_characteristic_char_5+@{attr_sheet_characteristic_char_6+@{attr_sheet_characteristic_char_7+@{attr_sheet_characteristic_char_8+@{attr_sheet_characteristic_char_9+@{attr_sheet_characteristic_char_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-characteristic-per">
+                <div class="sheet-characteristic-label"><h3>Perception</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_per_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_per_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_per_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_char"
+                           value="(@{attr_sheet_characteristic_per_1}+@{attr_sheet_characteristic_per_2}+@{attr_sheet_characteristic_per_3}+@{attr_sheet_characteristic_per_4}+@{attr_sheet_characteristic_per_5+@{attr_sheet_characteristic_per_6+@{attr_sheet_characteristic_per_7+@{attr_sheet_characteristic_per_8+@{attr_sheet_characteristic_per_9+@{attr_sheet_characteristic_per_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-characteristic-dex">
+                <div class="sheet-characteristic-label"><h3>Dexterite</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_dex_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_char"
+                           value="(@{attr_sheet_characteristic_dex_1}+@{attr_sheet_characteristic_dex_2}+@{attr_sheet_characteristic_dex_3}+@{attr_sheet_characteristic_dex_4}+@{attr_sheet_characteristic_dex_5+@{attr_sheet_characteristic_dex_6+@{attr_sheet_characteristic_dex_7+@{attr_sheet_characteristic_dex_8+@{attr_sheet_characteristic_dex_9+@{attr_sheet_characteristic_dex_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-characteristic-rel">
+                <div class="sheet-characteristic-label"><h3>Relationnel</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_rel_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_char"
+                           value="(@{attr_sheet_characteristic_rel_1}+@{attr_sheet_characteristic_rel_2}+@{attr_sheet_characteristic_rel_3}+@{attr_sheet_characteristic_rel_4}+@{attr_sheet_characteristic_rel_5+@{attr_sheet_characteristic_rel_6+@{attr_sheet_characteristic_rel_7+@{attr_sheet_characteristic_rel_8+@{attr_sheet_characteristic_rel_9+@{attr_sheet_characteristic_rel_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-characteristic-spirit">
+                <div class="sheet-characteristic-label"><h3>Esprit</h3></div>
+                <div class="sheet-characteristic-levels">
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_characteristic_spirit_10" value="1"/>
+                </div>
+                <div class="sheet-characteristic-level">
+                    <input type="number" name="attr_sheet_characteristic_char"
+                           value="(@{attr_sheet_characteristic_spirit_1}+@{attr_sheet_characteristic_spirit_2}+@{attr_sheet_characteristic_spirit_3}+@{attr_sheet_characteristic_spirit_4}+@{attr_sheet_characteristic_spirit_5+@{attr_sheet_characteristic_spirit_6+@{attr_sheet_characteristic_spirit_7+@{attr_sheet_characteristic_spirit_8+@{attr_sheet_characteristic_spirit_9+@{attr_sheet_characteristic_spirit_10})"
+                           disabled/>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sheet-skills">
+            <div class="sheet-skill-title"></div>
+            <div class="sheet-skill-title"><h3>COMPÉTENCES</h3></div>
+            <div class="sheet-skill-title"></div>
+
+            <div class="sheet-virtue-skills">
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Archerie</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_archery_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_archery_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_archery"
+                               value="(@{STR}+@{attr_skill_virtue_archery_1}+@{attr_skill_virtue_archery_2}+@{attr_skill_virtue_archery_3}+@{attr_skill_virtue_archery_4}+@{attr_skill_virtue_archery_5}+@{attr_skill_virtue_archery_6}+@{attr_skill_virtue_archery_7}+@{attr_skill_virtue_archery_8}+@{attr_skill_virtue_archery_9}+@{attr_skill_virtue_archery_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Armes de jet</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_throw-weapon_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_throw-weapon"
+                               value="(@{STR}+@{attr_skill_virtue_throw-weapon_1}+@{attr_skill_virtue_throw-weapon_2}+@{attr_skill_virtue_throw-weapon_3}+@{attr_skill_virtue_throw-weapon_4}+@{attr_skill_virtue_throw-weapon_5}+@{attr_skill_virtue_throw-weapon_6}+@{attr_skill_virtue_throw-weapon_7}+@{attr_skill_virtue_throw-weapon_8}+@{attr_skill_virtue_throw-weapon_9}+@{attr_skill_virtue_throw-weapon_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Armes lourdes</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_heavy-weapon_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_heavy-weapon"
+                               value="(@{STR}+@{attr_skill_virtue_heavy-weapon_1}+@{attr_skill_virtue_heavy-weapon_2}+@{attr_skill_virtue_heavy-weapon_3}+@{attr_skill_virtue_heavy-weapon_4}+@{attr_skill_virtue_heavy-weapon_5}+@{attr_skill_virtue_heavy-weapon_6}+@{attr_skill_virtue_heavy-weapon_7}+@{attr_skill_virtue_heavy-weapon_8}+@{attr_skill_virtue_heavy-weapon_9}+@{attr_skill_virtue_heavy-weapon_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Arts martiaux</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_martial-art_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_martial-art"
+                               value="(@{STR}+@{attr_skill_virtue_martial-art_1}+@{attr_skill_virtue_martial-art_2}+@{attr_skill_virtue_martial-art_3}+@{attr_skill_virtue_martial-art_4}+@{attr_skill_virtue_martial-art_5}+@{attr_skill_virtue_martial-art_6}+@{attr_skill_virtue_martial-art_7}+@{attr_skill_virtue_martial-art_8}+@{attr_skill_virtue_martial-art_9}+@{attr_skill_virtue_martial-art_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Athletisme</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_athletism_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_athletism_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_athletism"
+                               value="(@{STR}+@{attr_skill_virtue_athletism_1}+@{attr_skill_virtue_athletism_2}+@{attr_skill_virtue_athletism_3}+@{attr_skill_virtue_athletism_4}+@{attr_skill_virtue_athletism_5}+@{attr_skill_virtue_athletism_6}+@{attr_skill_virtue_athletism_7}+@{attr_skill_virtue_athletism_8}+@{attr_skill_virtue_athletism_9}+@{attr_skill_virtue_athletism_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Chasse</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_hunting_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_hunting_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_hunting"
+                               value="(@{STR}+@{attr_skill_virtue_hunting_1}+@{attr_skill_virtue_hunting_2}+@{attr_skill_virtue_hunting_3}+@{attr_skill_virtue_hunting_4}+@{attr_skill_virtue_hunting_5}+@{attr_skill_virtue_hunting_6}+@{attr_skill_virtue_hunting_7}+@{attr_skill_virtue_hunting_8}+@{attr_skill_virtue_hunting_9}+@{attr_skill_virtue_hunting_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Equitation</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_horseback_riding_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_archery"
+                               value="(@{STR}+@{attr_skill_virtue_horseback_riding_1}+@{attr_skill_virtue_horseback_riding_2}+@{attr_skill_virtue_horseback_riding_3}+@{attr_skill_virtue_horseback_riding_4}+@{attr_skill_virtue_horseback_riding_5}+@{attr_skill_virtue_horseback_riding_6}+@{attr_skill_virtue_horseback_riding_7}+@{attr_skill_virtue_horseback_riding_8}+@{attr_skill_virtue_horseback_riding_9}+@{attr_skill_virtue_horseback_riding_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Esquive</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_dodge_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_dodge_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_dodge"
+                               value="(@{STR}+@{attr_skill_virtue_dodge_1}+@{attr_skill_virtue_dodge_2}+@{attr_skill_virtue_dodge_3}+@{attr_skill_virtue_dodge_4}+@{attr_skill_virtue_dodge_5}+@{attr_skill_virtue_dodge_6}+@{attr_skill_virtue_dodge_7}+@{attr_skill_virtue_dodge_8}+@{attr_skill_virtue_dodge_9}+@{attr_skill_virtue_dodge_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Furtivité</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_stealth_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_stealth_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_stealth"
+                               value="(@{STR}+@{attr_skill_virtue_stealth_1}+@{attr_skill_virtue_stealth_2}+@{attr_skill_virtue_stealth_3}+@{attr_skill_virtue_stealth_4}+@{attr_skill_virtue_stealth_5}+@{attr_skill_virtue_stealth_6}+@{attr_skill_virtue_stealth_7}+@{attr_skill_virtue_stealth_8}+@{attr_skill_virtue_stealth_9}+@{attr_skill_virtue_stealth_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Melée</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_melee_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_melee_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_melee"
+                               value="(@{STR}+@{attr_skill_virtue_melee_1}+@{attr_skill_virtue_melee_2}+@{attr_skill_virtue_melee_3}+@{attr_skill_virtue_melee_4}+@{attr_skill_virtue_melee_5}+@{attr_skill_virtue_melee_6}+@{attr_skill_virtue_melee_7}+@{attr_skill_virtue_melee_8}+@{attr_skill_virtue_melee_9}+@{attr_skill_virtue_melee_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Stratégie</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_strategy_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_strategy_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_strategy"
+                               value="(@{STR}+@{attr_skill_virtue_strategy_1}+@{attr_skill_virtue_strategy_2}+@{attr_skill_virtue_strategy_3}+@{attr_skill_virtue_strategy_4}+@{attr_skill_virtue_strategy_5}+@{attr_skill_virtue_strategy_6}+@{attr_skill_virtue_strategy_7}+@{attr_skill_virtue_strategy_8}+@{attr_skill_virtue_strategy_9}+@{attr_skill_virtue_strategy_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Survie</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_virtue_survival_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_virtue_survival_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_virtue_asurvival"
+                               value="(@{STR}+@{attr_skill_virtue_survival_1}+@{attr_skill_virtue_survival_2}+@{attr_skill_virtue_survival_3}+@{attr_skill_virtue_survival_4}+@{attr_skill_virtue_survival_5}+@{attr_skill_virtue_survival_6}+@{attr_skill_virtue_survival_7}+@{attr_skill_virtue_survival_8}+@{attr_skill_virtue_survival_9}+@{attr_skill_virtue_survival_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sheet-fides-skills">
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Animaux</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_animal_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_animal_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_animal"
+                               value="(@{STR}+@{attr_skill_fides_animal_1}+@{attr_skill_fides_animal_2}+@{attr_skill_fides_animal_3}+@{attr_skill_fides_animal_4}+@{attr_skill_fides_animal_5}+@{attr_skill_fides_animal_6}+@{attr_skill_fides_animal_7}+@{attr_skill_fides_animal_8}+@{attr_skill_fides_animal_9}+@{attr_skill_fides_animal_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Art oratoire</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_public-speaking_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_public-speaking"
+                               value="(@{STR}+@{attr_skill_fides_public-speaking_1}+@{attr_skill_fides_public-speaking_2}+@{attr_skill_fides_public-speaking_3}+@{attr_skill_fides_public-speaking_4}+@{attr_skill_fides_public-speaking_5}+@{attr_skill_fides_public-speaking_6}+@{attr_skill_fides_public-speaking_7}+@{attr_skill_fides_public-speaking_8}+@{attr_skill_fides_public-speaking_9}+@{attr_skill_fides_public-speaking_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Autorité</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_autority_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_autority_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_autority"
+                               value="(@{STR}+@{attr_skill_fides_autority_1}+@{attr_skill_fides_autority_2}+@{attr_skill_fides_autority_3}+@{attr_skill_fides_autority_4}+@{attr_skill_fides_autority_5}+@{attr_skill_fides_autority_6}+@{attr_skill_fides_autority_7}+@{attr_skill_fides_autority_8}+@{attr_skill_fides_autority_9}+@{attr_skill_fides_autority_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Comédie</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_comedy_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_comedy_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_comedy"
+                               value="(@{STR}+@{attr_skill_fides_comedy_1}+@{attr_skill_fides_comedy_2}+@{attr_skill_fides_comedy_3}+@{attr_skill_fides_comedy_4}+@{attr_skill_fides_comedy_5}+@{attr_skill_fides_comedy_6}+@{attr_skill_fides_comedy_7}+@{attr_skill_fides_comedy_8}+@{attr_skill_fides_comedy_9}+@{attr_skill_fides_comedy_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Contrefaçon</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_counterfeiting_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_counterfeiting"
+                               value="(@{STR}+@{attr_skill_fides_counterfeiting_1}+@{attr_skill_fides_counterfeiting_2}+@{attr_skill_fides_counterfeiting_3}+@{attr_skill_fides_counterfeiting_4}+@{attr_skill_fides_counterfeiting_5}+@{attr_skill_fides_counterfeiting_6}+@{attr_skill_fides_counterfeiting_7}+@{attr_skill_fides_counterfeiting_8}+@{attr_skill_fides_counterfeiting_9}+@{attr_skill_fides_counterfeiting_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Intimidation</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_intimidation_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intimidation_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_intimidation"
+                               value="(@{STR}+@{attr_skill_fides_intimidation_1}+@{attr_skill_fides_intimidation_2}+@{attr_skill_fides_intimidation_3}+@{attr_skill_fides_intimidation_4}+@{attr_skill_fides_intimidation_5}+@{attr_skill_fides_intimidation_6}+@{attr_skill_fides_intimidation_7}+@{attr_skill_fides_intimidation_8}+@{attr_skill_fides_intimidation_9}+@{attr_skill_fides_intimidation_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Intuition</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_intuition_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_intuition_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_intuition"
+                               value="(@{STR}+@{attr_skill_fides_intuition_1}+@{attr_skill_fides_intuition_2}+@{attr_skill_fides_intuition_3}+@{attr_skill_fides_intuition_4}+@{attr_skill_fides_intuition_5}+@{attr_skill_fides_intuition_6}+@{attr_skill_fides_intuition_7}+@{attr_skill_fides_intuition_8}+@{attr_skill_fides_intuition_9}+@{attr_skill_fides_intuition_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Marchandage</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_haggling_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_haggling_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_haggling"
+                               value="(@{STR}+@{attr_skill_fides_haggling_1}+@{attr_skill_fides_haggling_2}+@{attr_skill_fides_haggling_3}+@{attr_skill_fides_haggling_4}+@{attr_skill_fides_haggling_5}+@{attr_skill_fides_haggling_6}+@{attr_skill_fides_haggling_7}+@{attr_skill_fides_haggling_8}+@{attr_skill_fides_haggling_9}+@{attr_skill_fides_haggling_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Mondanités</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_worldliness_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_worldliness_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_worldliness"
+                               value="(@{STR}+@{attr_skill_fides_worldliness_1}+@{attr_skill_fides_worldliness_2}+@{attr_skill_fides_worldliness_3}+@{attr_skill_fides_worldliness_4}+@{attr_skill_fides_worldliness_5}+@{attr_skill_fides_worldliness_6}+@{attr_skill_fides_worldliness_7}+@{attr_skill_fides_worldliness_8}+@{attr_skill_fides_worldliness_9}+@{attr_skill_fides_worldliness_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Rhétorique</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_rhetoric_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_rhetoric"
+                               value="(@{STR}+@{attr_skill_fides_rhetoric_1}+@{attr_skill_fides_rhetoric_2}+@{attr_skill_fides_rhetoric_3}+@{attr_skill_fides_rhetoric_4}+@{attr_skill_fides_rhetoric_5}+@{attr_skill_fides_rhetoric_6}+@{attr_skill_fides_rhetoric_7}+@{attr_skill_fides_rhetoric_8}+@{attr_skill_fides_rhetoric_9}+@{attr_skill_fides_rhetoric_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Séduction</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_seduction_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_seduction_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_seduction"
+                               value="(@{STR}+@{attr_skill_fides_seduction_1}+@{attr_skill_fides_seduction_2}+@{attr_skill_fides_seduction_3}+@{attr_skill_fides_seduction_4}+@{attr_skill_fides_seduction_5}+@{attr_skill_fides_seduction_6}+@{attr_skill_fides_seduction_7}+@{attr_skill_fides_seduction_8}+@{attr_skill_fides_seduction_9}+@{attr_skill_fides_seduction_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Subterfuge</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_fides_subterfuge_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_fides_subterfuge"
+                               value="(@{STR}+@{attr_skill_fides_subterfuge_1}+@{attr_skill_fides_subterfuge_2}+@{attr_skill_fides_subterfuge_3}+@{attr_skill_fides_subterfuge_4}+@{attr_skill_fides_subterfuge_5}+@{attr_skill_fides_subterfuge_6}+@{attr_skill_fides_subterfuge_7}+@{attr_skill_fides_subterfuge_8}+@{attr_skill_fides_subterfuge_9}+@{attr_skill_fides_subterfuge_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sheet-pietas-skills">
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Artisanat</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_craft_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_craft_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_craft"
+                               value="(@{STR}+@{attr_skill_pietas_craft_1}+@{attr_skill_pietas_craft_2}+@{attr_skill_pietas_craft_3}+@{attr_skill_pietas_craft_4}+@{attr_skill_pietas_craft_5}+@{attr_skill_pietas_craft_6}+@{attr_skill_pietas_craft_7}+@{attr_skill_pietas_craft_8}+@{attr_skill_pietas_craft_9}+@{attr_skill_pietas_craft_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Arts</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_art_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_art_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_art"
+                               value="(@{STR}+@{attr_skill_pietas_art_1}+@{attr_skill_pietas_art_2}+@{attr_skill_pietas_art_3}+@{attr_skill_pietas_art_4}+@{attr_skill_pietas_art_5}+@{attr_skill_pietas_art_6}+@{attr_skill_pietas_art_7}+@{attr_skill_pietas_art_8}+@{attr_skill_pietas_art_9}+@{attr_skill_pietas_art_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Augures</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_augury_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_augury_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_augury"
+                               value="(@{STR}+@{attr_skill_pietas_augury_1}+@{attr_skill_pietas_augury_2}+@{attr_skill_pietas_augury_3}+@{attr_skill_pietas_augury_4}+@{attr_skill_pietas_augury_5}+@{attr_skill_pietas_augury_6}+@{attr_skill_pietas_augury_7}+@{attr_skill_pietas_augury_8}+@{attr_skill_pietas_augury_9}+@{attr_skill_pietas_augury_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Culture</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_culture_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_culture_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_culture"
+                               value="(@{STR}+@{attr_skill_pietas_culture_1}+@{attr_skill_pietas_culture_2}+@{attr_skill_pietas_culture_3}+@{attr_skill_pietas_culture_4}+@{attr_skill_pietas_culture_5}+@{attr_skill_pietas_culture_6}+@{attr_skill_pietas_culture_7}+@{attr_skill_pietas_culture_8}+@{attr_skill_pietas_culture_9}+@{attr_skill_pietas_culture_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Droit</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_law_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_law_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_law"
+                               value="(@{STR}+@{attr_skill_pietas_law_1}+@{attr_skill_pietas_law_2}+@{attr_skill_pietas_law_3}+@{attr_skill_pietas_law_4}+@{attr_skill_pietas_law_5}+@{attr_skill_pietas_law_6}+@{attr_skill_pietas_law_7}+@{attr_skill_pietas_law_8}+@{attr_skill_pietas_law_9}+@{attr_skill_pietas_law_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Langues</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_languages_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_languages_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_languages"
+                               value="(@{STR}+@{attr_skill_pietas_languages_1}+@{attr_skill_pietas_languages_2}+@{attr_skill_pietas_languages_3}+@{attr_skill_pietas_languages_4}+@{attr_skill_pietas_languages_5}+@{attr_skill_pietas_languages_6}+@{attr_skill_pietas_languages_7}+@{attr_skill_pietas_languages_8}+@{attr_skill_pietas_languages_9}+@{attr_skill_pietas_languages_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Médecine</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_medicine_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_medicine_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_medicine"
+                               value="(@{STR}+@{attr_skill_pietas_medicine_1}+@{attr_skill_pietas_medicine_2}+@{attr_skill_pietas_medicine_3}+@{attr_skill_pietas_medicine_4}+@{attr_skill_pietas_medicine_5}+@{attr_skill_pietas_medicine_6}+@{attr_skill_pietas_medicine_7}+@{attr_skill_pietas_medicine_8}+@{attr_skill_pietas_medicine_9}+@{attr_skill_pietas_medicine_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Navigation</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_navigation_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_navigation_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_navigation"
+                               value="(@{STR}+@{attr_skill_pietas_navigation_1}+@{attr_skill_pietas_navigation_2}+@{attr_skill_pietas_navigation_3}+@{attr_skill_pietas_navigation_4}+@{attr_skill_pietas_navigation_5}+@{attr_skill_pietas_navigation_6}+@{attr_skill_pietas_navigation_7}+@{attr_skill_pietas_navigation_8}+@{attr_skill_pietas_navigation_9}+@{attr_skill_pietas_navigation_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Recherche</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_research_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_research_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_research"
+                               value="(@{STR}+@{attr_skill_pietas_research_1}+@{attr_skill_pietas_research_2}+@{attr_skill_pietas_research_3}+@{attr_skill_pietas_research_4}+@{attr_skill_pietas_research_5}+@{attr_skill_pietas_research_6}+@{attr_skill_pietas_research_7}+@{attr_skill_pietas_research_8}+@{attr_skill_pietas_research_9}+@{attr_skill_pietas_research_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Religion</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_religion_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_religion_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_religion"
+                               value="(@{STR}+@{attr_skill_pietas_religion_1}+@{attr_skill_pietas_religion_2}+@{attr_skill_pietas_religion_3}+@{attr_skill_pietas_religion_4}+@{attr_skill_pietas_religion_5}+@{attr_skill_pietas_religion_6}+@{attr_skill_pietas_religion_7}+@{attr_skill_pietas_religion_8}+@{attr_skill_pietas_religion_9}+@{attr_skill_pietas_religion_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Sciences</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_science_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_science_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_science"
+                               value="(@{STR}+@{attr_skill_pietas_science_1}+@{attr_skill_pietas_science_2}+@{attr_skill_pietas_science_3}+@{attr_skill_pietas_science_4}+@{attr_skill_pietas_science_5}+@{attr_skill_pietas_science_6}+@{attr_skill_pietas_science_7}+@{attr_skill_pietas_science_8}+@{attr_skill_pietas_science_9}+@{attr_skill_pietas_science_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+                <div class="sheet-skill">
+                    <div class="sheet-skill-label">Vigilance</div>
+                    <div class="sheet-skill-levels">
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_1" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_2" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_3" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_4" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_5" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_6" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_7" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_8" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_9" value="1"/>
+                        <input type="checkbox" name="attr_skill_pietas_vigilance_10" value="1"/>
+                    </div>
+                    <div class="sheet-skill-level">
+                        <input type="number" name="attr_skill_pietas_vigilance"
+                               value="(@{STR}+@{attr_skill_pietas_vigilance_1}+@{attr_skill_pietas_vigilance_2}+@{attr_skill_pietas_vigilance_3}+@{attr_skill_pietas_vigilance_4}+@{attr_skill_pietas_vigilance_5}+@{attr_skill_pietas_vigilance_6}+@{attr_skill_pietas_vigilance_7}+@{attr_skill_pietas_vigilance_8}+@{attr_skill_pietas_vigilance_9}+@{attr_skill_pietas_vigilance_10})"
+                               disabled/>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> <!-- class="sheet-skills" -->
+
+        <div class="sheet-faculties">
+            <div class="sheet-faculty">
+                <div class="sheet-faculty-label"><h3>Défense</h3></div>
+                <div class="sheet-faculty-levels">
+                    <input type="checkbox" name="attr_sheet_faculty_defense_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_faculty_defense_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_defense_10" value="1"/>
+                </div>
+                <div class="sheet-faculty-level">
+                    <input type="number" name="attr_sheet_faculty_defense"
+                           value="(@{attr_sheet_faculty_defense_1}+@{attr_sheet_faculty_defense_2}+@{attr_sheet_faculty_defense_3}+@{attr_sheet_faculty_defense_4}+@{attr_sheet_faculty_defense_5+@{attr_sheet_faculty_defense_6+@{attr_sheet_faculty_defense_7+@{attr_sheet_faculty_defense_8+@{attr_sheet_faculty_defense_9+@{attr_sheet_faculty_defense_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-faculty">
+                <div class="sheet-faculty-label"><h3>Influence</h3></div>
+                <div class="sheet-faculty-levels">
+                    <input type="checkbox" name="attr_sheet_faculty_influence_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_faculty_influence_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_influence_10" value="1"/>
+                </div>
+                <div class="sheet-faculty-level">
+                    <input type="number" name="attr_sheet_faculty_influence"
+                           value="(@{attr_sheet_faculty_influence_1}+@{attr_sheet_faculty_influence_2}+@{attr_sheet_faculty_influence_3}+@{attr_sheet_faculty_influence_4}+@{attr_sheet_faculty_influence_5+@{attr_sheet_faculty_influence_6+@{attr_sheet_faculty_influence_7+@{attr_sheet_faculty_influence_8+@{attr_sheet_faculty_influence_9+@{attr_sheet_faculty_influence_10})"
+                           disabled/>
+                </div>
+            </div>
+
+            <div class="sheet-faculty">
+                <div class="sheet-faculty-label"><h3>Volonté</h3></div>
+                <div class="sheet-faculty-levels">
+                    <input type="checkbox" name="attr_sheet_faculty_will_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_5" value="1"/>
+                    &nbsp;
+                    <input type="checkbox" name="attr_sheet_faculty_will_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_faculty_will_10" value="1"/>
+                </div>
+                <div class="sheet-faculty-level">
+                    <input type="number" name="attr_sheet_faculty_will"
+                           value="(@{attr_sheet_faculty_will_1}+@{attr_sheet_faculty_will_2}+@{attr_sheet_faculty_will_3}+@{attr_sheet_faculty_will_4}+@{attr_sheet_faculty_will_5+@{attr_sheet_faculty_will_6+@{attr_sheet_faculty_will_7+@{attr_sheet_faculty_will_8+@{attr_sheet_faculty_will_9+@{attr_sheet_faculty_will_10})"
+                           disabled/>
+                </div>
+            </div>
+        </div>
+
+        <div class="sheet-healths">
+            <div class="sheet-health">
+                <div class="sheet-health-label"><h3>Points de vie</h3></div>
+                <div class="sheet-health-levels">
+                    <input type="checkbox" name="attr_sheet_health_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_5" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_10" value="1"/>
+                </div>
+            </div>
+
+            <div class="sheet-health">
+                <div class="sheet-health-label"><h3>Seuil - 3</h3></div>
+                <div class="sheet-health-levels">
+                    <input type="checkbox" name="attr_sheet_health_threshold3_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_5" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold3_10" value="1"/>
+                </div>
+            </div>
+
+            <div class="sheet-health">
+                <div class="sheet-health-label"><h3>Seuil - 6</h3></div>
+                <div class="sheet-health-levels">
+                    <input type="checkbox" name="attr_sheet_health_threshold6_1" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_2" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_3" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_4" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_5" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_6" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_7" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_8" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_9" value="1"/>
+                    <input type="checkbox" name="attr_sheet_health_threshold6_10" value="1"/>
+                </div>
+            </div>
+        </div>
+    </div> <!-- class="sheet-character" -->
+
+    <div class="sheet-equipment">
+    </div> <!-- class="sheet-equipment" -->
+
+    <div class="sheet-notes">
+        <textarea name="attr_notes"></textarea>
+    </div>
+
+    <script type="text/worker">
+            const buttonlist = ["character","equipment","notes"];
+            buttonlist.forEach(button => {
+                on(`clicked:${button}`, function() {
+                    setAttrs({
+                        sheetTab: button
+                    });
+                });
+            });
+    </script>
+
+    <!-- END copy to roll20 -->
+
+
+    <script type="text/javascript">
+        const buttonlist = ["character","equipment","notes"];
+        buttonlist.forEach(button => {
+            document.querySelector('button[name="act_' + button + '"]').addEventListener('click', () => {
+                document.querySelector('.sheet-tabstoggle').setAttribute('value', button);
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
